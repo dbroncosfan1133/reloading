@@ -1,5 +1,5 @@
 import React from "react";
-import Hero from "../components/Hero/Hero";
+import MainHero from "../components/MainHero/MainHero";
 import LoadsBtn from "../components/LoadsBtn/LoadsBtn";
 import NewLoadsBtn from "../components/NewLoadBtn/NewLoadBtn";
 import "./mainpage.css"
@@ -7,7 +7,7 @@ import "./mainpage.css"
 function MainPage() {
     return (
         <div>
-            <Hero />
+            <MainHero />
             <div className="container mainContain">
                 <div className="columns">
                     <div className="column is-5">

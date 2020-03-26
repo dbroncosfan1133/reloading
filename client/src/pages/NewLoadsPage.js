@@ -1,7 +1,8 @@
 import React from "react";
 import BackButton from "../components/BackBtn/BackBtn";
 import { Input, FormBtn } from "../components/Form/Form";
-import Hero from "../components/Hero/Hero";
+import MainHero from "../components/MainHero/MainHero";
+import API from "../utils/API";
 import "./mainpage.css"
 
 class NewLoadsPage extends React.Component {
@@ -24,24 +25,31 @@ class NewLoadsPage extends React.Component {
     });
   };
 
-  //   handleFormSubmit = event => {
-  //     event.preventDefault();
-  //     if (this.state.itemNumber && this.state.subtract) {
-  //       API.subtractQuantity({
-  //         itemNumber: this.state.itemNumber,
-  //         subtract: this.state.subtract
-  //       })
-  //         .then(res => this.viewInventory())
-  //         .catch(err => console.log(err));
-  //     }
-  //   };
+    handleFormSubmit = event => {
+      event.preventDefault();
+      if (this.state.caliber && this.state.bulletBrand && this.state.bulletName && this.state.bulletGrains
+          && this.state.powderBrand && this.state.powderName && this.state.powderGrains && this.state.trimmed) {
+        API.saveLoad({
+          caliber: this.state.caliber,
+          bulletBrand: this.state.bulletBrand,
+          bulletName: this.state.bulletName,
+          bulletGrains: this.state.bulletGrains,
+          powderBrand: this.state.powderBrand,
+          powderName: this.state.powderName,
+          powderGrains: this.state.powderGrains,
+          trimmed: this.state.trimmed
+        })
+          // .then(res => this.viewInventory())
+          .catch(err => console.log(err));
+      }
+    };
 
   render() {
     return (
       <div>
-        <Hero />
+        <MainHero />
         <div className="container mainContain">
-          <h1 className="is-size-1">Enter New Load Data:</h1>
+          <h1 className="is-size-3">Enter New Load Data:</h1>
           <hr />
           <div className="columns">
             <div className="column is-9">
@@ -92,7 +100,7 @@ class NewLoadsPage extends React.Component {
                   value={this.state.trimmed}
                   onChange={this.handleInputChange}
                   name="trimmed"
-                  placeholder="Trimmed?"
+                  placeholder="Trimmed? (Yes or No)"
                 />
                 <div className="columns">
                   <div className="column is-3">

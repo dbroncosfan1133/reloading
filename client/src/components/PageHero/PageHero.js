@@ -1,7 +1,7 @@
 import React from "react";
 import BackButton from "../BackBtn/BackBtn";
 
-function Hero() {
+function PageHero() {
     return (
         <div className="hero is-dark is-bold">
             <div className="hero-body">
@@ -29,4 +29,4 @@ function Hero() {
     );
 }
 
-export default Hero;
+export default PageHero;

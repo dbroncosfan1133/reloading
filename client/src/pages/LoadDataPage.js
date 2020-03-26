@@ -1,86 +1,129 @@
 import React from "react";
 import { Col, Row, Container } from "../components/Grid/grid";
-import { List, ListItem } from "../components/List/list";
-import BackButton from "../components/BackBtn/BackBtn";
-import Hero from "../components/Hero/Hero";
+import PageHero from "../components/PageHero/PageHero";
 import API from "../utils/API";
 import "./mainpage.css"
 
 class PastLoads extends React.Component {
-    state = {
-        loads: []
-    };
+  state = {
+    loads: []
+  };
 
-    componentDidMount() {
-        this.getAllLoads();
-        console.log(this.state)
-    }
+  componentDidMount() {
+    this.getAllLoads();
+    console.log(this.state)
+  }
 
-    getAllLoads = () => {
-        API.getLoads()
-            .then(res =>
-                this.setState({ loads: res.data })
-            )
-            .catch(err => console.log(err));
-    };
+  getAllLoads = () => {
+    API.getLoads()
+      .then(res =>
+        this.setState({ loads: res.data })
+      )
+      .catch(err => console.log(err));
+  };
 
-    handleInputChange = event => {
-        const { name, value } = event.target;
-        this.setState({
-            [name]: value
-        });
-    };
+  handleInputChange = event => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
+  };
 
-    render() {
-        return (
-            <div>
-                <Hero />
-                <Container>
-                    {this.state.loads.length ? (
-                        <List>
-                            {this.state.loads.map(load => (
-                                <ListItem key={load._id}>
-                                    <Row>
-                                        <div className="is-size-4">
-                                            {load.caliber} | {load.bulletBrand} | {load.BulletName} | {load.bulletGrains} Grains | {load.powderBrand} | {load.powderName} | {load.powderGrains} Grains | {load.trim}
-                                        </div>
-                                    </Row>
-                                </ListItem>
-                            ))}
-                        </List>
-                    ) : (
-                            <div></div>
-                        )}
-                </Container>
-            </div>
-        )
-    }
-
+  render() {
+    return (
+      <div>
+        <PageHero />
+        <div className="container mainContain">
+          <h1 className="is-size-3">Load History</h1>
+          <hr />
+          <table className="table is-bordered is-striped is-fullwidth">
+            <thead>
+              <tr>
+                <th>Caliber:</th>
+                <th>Bullet Brand:</th>
+                <th>Bullet Name:</th>
+                <th>Bullet Grains:</th>
+                <th>Powder Brand:</th>
+                <th>Powder Name:</th>
+                <th>Powder Grains:</th>
+                <th>Trim</th>
+              </tr>
+            </thead>
+            <tfoot>
+              <tr>
+                <th>Caliber:</th>
+                <th>Bullet Brand:</th>
+                <th>Bullet Name:</th>
+                <th>Bullet Grains:</th>
+                <th>Powder Brand:</th>
+                <th>Powder Name:</th>
+                <th>Powder Grains:</th>
+                <th>Trim</th>
+              </tr>
+            </tfoot>
+            <tbody>
+              <td>
+                {this.state.loads.map(load => (
+                  <div className="is-size-4">
+                    {load.caliber}
+                  </div>
+                ))}
+              </td>
+              <td>
+                {this.state.loads.map(load => (
+                  <div className="is-size-4">
+                    {load.bulletBrand}
+                  </div>
+                ))}
+              </td>
+              <td>
+                {this.state.loads.map(load => (
+                  <div className="is-size-4">
+                    {load.bulletName}
+                  </div>
+                ))}
+              </td>
+              <td>
+                {this.state.loads.map(load => (
+                  <div className="is-size-4">
+                    {load.bulletGrains}
+                  </div>
+                ))}
+              </td>
+              <td>
+                {this.state.loads.map(load => (
+                  <div className="is-size-4">
+                    {load.powderBrand}
+                  </div>
+                ))}
+              </td>
+              <td>
+                {this.state.loads.map(load => (
+                  <div className="is-size-4">
+                    {load.powderName}
+                  </div>
+                ))}
+              </td>
+              <td>
+                {this.state.loads.map(load => (
+                  <div className="is-size-4">
+                    {load.powderGrains}
+                  </div>
+                ))}
+              </td>
+              <td>
+                {this.state.loads.map(load => (
+                  <div className="is-size-4">
+                    {load.trim}
+                  </div>
+                ))}
+              </td>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    )
+  }
 }
-
-
-// function LoadData() {
-//     return (
-//         <div>
-//             <Hero />
-//             <div className="container mainContain">
-//                 <h1 className="is-size-1">Past Load Data:</h1>
-//                 <hr />
-//                 <div className="columns">
-//                     <div className="column is-6">
-
-//                     </div>
-//                     <div className="column is-3">
-
-//                     </div>
-//                     <div className="column is-3">
-
-//                         <BackButton />
-//                     </div>
-//                 </div>
-//             </div>
-//         </div>
-//     )
-// }
 
 export default PastLoads;
