@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-class LoadsBtn extends React.Component {
+class PastLoadsBtn extends React.Component {
     handleClick() {
         console.log('Clicked');
     }
@@ -9,11 +9,11 @@ class LoadsBtn extends React.Component {
         return (
             <div className="buttons">
                 <Link to={"/loads"}>
-                    <button className="button is-success is-large" onClick={this.handleClick.bind(this)}>View Load Data</button>
+                    <button className="button is-success is-large" onClick={this.handleClick.bind(this)}>Past Load Data</button>
                 </Link>
             </div>
         )
     }
 }
 
-export default LoadsBtn;
+export default PastLoadsBtn;

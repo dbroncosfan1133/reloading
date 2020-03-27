@@ -1,6 +1,6 @@
 import React from "react";
 import MainHero from "../components/MainHero/MainHero";
-import LoadsBtn from "../components/LoadsBtn/LoadsBtn";
+import PastLoadsBtn from "../components/PastLoadsBtn/PastLoadsBtn";
 import NewLoadsBtn from "../components/NewLoadBtn/NewLoadBtn";
 import "./mainpage.css"
 
@@ -14,7 +14,7 @@ function MainPage() {
                         <h1 className="is-size-3">Welcome, what would you like to do?</h1>
                     </div>
                     <div className="column is-2">
-                        <LoadsBtn />
+                        <PastLoadsBtn />
                         <NewLoadsBtn />
                     </div>
                     <div className="column is-3">
