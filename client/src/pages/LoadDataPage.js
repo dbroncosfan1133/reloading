@@ -11,7 +11,6 @@ class PastLoads extends React.Component {
 
   componentDidMount() {
     this.getAllLoads();
-    console.log(this.state)
   }
 
   getAllLoads = () => {
@@ -20,13 +19,6 @@ class PastLoads extends React.Component {
         this.setState({ loads: res.data })
       )
       .catch(err => console.log(err));
-  };
-
-  handleInputChange = event => {
-    const { name, value } = event.target;
-    this.setState({
-      [name]: value
-    });
   };
 
   render() {

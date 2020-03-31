@@ -3,7 +3,7 @@ const db = require("../models");
 
 mongoose.connect(
   process.env.MONGO_URI ||
-  "mongodb://localhost/reloading"
+  "mongodb://192.168.1.96/reloading_db"
 );
 
 const startingLoad = [

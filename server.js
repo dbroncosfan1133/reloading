@@ -15,7 +15,7 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes);
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reloading", {
+mongoose.connect(process.env.MONGODB_URI || "mongodb://192.168.1.96/reloading_db", {
   userNewUrlParser: true })
   .then(() => console.log("Connected to MongoDB"))
   .catch(err => console.log(`Cannot connect to database: ${err}`))
