@@ -102,8 +102,8 @@ class NewLoadsPage extends React.Component {
                   name="trimmed"
                   placeholder="Trimmed? (Yes or No)"
                 />
-                <div className="columns">
-                  <div className="column is-3">
+                <div className="field is-grouped">
+                    <p className="control">
                     <FormBtn
                       disabled={!(this.state.caliber && this.state.bulletBrand
                         && this.state.bulletName && this.state.bulletGrains &&
@@ -112,15 +112,13 @@ class NewLoadsPage extends React.Component {
                       onClick={this.handleFormSubmit}
                     >
                       Submit
-                    </FormBtn>
+                      </FormBtn>
+                    </p>
+                    <p className="control">
+                      <BackButton />
+                    </p>
                   </div>
-                  <div className="column is-3">
-                    <BackButton />
-                  </div>
-                </div>
               </form>
-            </div>
-            <div className="column is-3">
             </div>
           </div>
         </div>

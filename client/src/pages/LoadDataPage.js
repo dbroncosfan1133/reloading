@@ -1,5 +1,4 @@
 import React from "react";
-import { Col, Row, Container } from "../components/Grid/grid";
 import PageHero from "../components/PageHero/PageHero";
 import API from "../utils/API";
 import "./mainpage.css"
