@@ -7,7 +7,6 @@ import "./mainpage.css"
 
 class NewLoadsPage extends React.Component {
   state = {
-    Loads: [],
     caliber: "",
     bulletBrand: "",
     bulletName: "",
@@ -15,7 +14,7 @@ class NewLoadsPage extends React.Component {
     powderBrand: "",
     powderName: "",
     powderGrains: "",
-    trimmed: ""
+    trim: ""
   };
 
   handleInputChange = event => {
@@ -28,7 +27,7 @@ class NewLoadsPage extends React.Component {
     handleFormSubmit = event => {
       event.preventDefault();
       if (this.state.caliber && this.state.bulletBrand && this.state.bulletName && this.state.bulletGrains
-          && this.state.powderBrand && this.state.powderName && this.state.powderGrains && this.state.trimmed) {
+          && this.state.powderBrand && this.state.powderName && this.state.powderGrains && this.state.trim) {
         API.saveLoad({
           caliber: this.state.caliber,
           bulletBrand: this.state.bulletBrand,
@@ -37,7 +36,7 @@ class NewLoadsPage extends React.Component {
           powderBrand: this.state.powderBrand,
           powderName: this.state.powderName,
           powderGrains: this.state.powderGrains,
-          trimmed: this.state.trimmed
+          trim: this.state.trim
         })
           // .then(res => this.viewInventory())
           .catch(err => console.log(err));
@@ -97,10 +96,10 @@ class NewLoadsPage extends React.Component {
                   placeholder="Powder Grains Used.."
                 />
                 <Input
-                  value={this.state.trimmed}
+                  value={this.state.trim}
                   onChange={this.handleInputChange}
-                  name="trimmed"
-                  placeholder="Trimmed? (Yes or No)"
+                  name="trim"
+                  placeholder="Trimmed? (Times Trimmed)"
                 />
                 <div className="field is-grouped">
                     <p className="control">
@@ -108,7 +107,7 @@ class NewLoadsPage extends React.Component {
                       disabled={!(this.state.caliber && this.state.bulletBrand
                         && this.state.bulletName && this.state.bulletGrains &&
                         this.state.powderBrand && this.state.powderName &&
-                        this.state.powderGrains && this.state.trimmed)}
+                        this.state.powderGrains && this.state.trim)}
                       onClick={this.handleFormSubmit}
                     >
                       Submit

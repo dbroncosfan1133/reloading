@@ -8,7 +8,6 @@ mongoose.connect(
 
 const startingLoad = [
   {
-    date: new Date(Date.now()),
     caliber: ".223 Remington",
     bulletBrand: "Hornady",
     bulletName: "V-Max",
@@ -19,7 +18,6 @@ const startingLoad = [
     trim: 1
   },
   {
-    date: new Date(Date.now()),
     caliber: ".40 S&W",
     bulletBrand: "Speer",
     bulletName: "TMJ",

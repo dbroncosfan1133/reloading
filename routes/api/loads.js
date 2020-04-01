@@ -4,7 +4,7 @@ const loadsController = require("../../controllers/loadsController");
 // Matches with "/api/loads"
 router.route("/")
   .get(loadsController.findAll)
-  .post(loadsController.createNewLoad);
+  .post(loadsController.create);
 
 // Matches with "/api/loads/:id"
 router

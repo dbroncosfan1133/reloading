@@ -15,9 +15,19 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  createNewLoad: function(req, res) {
+  create: function(req, res) {
+    const tempObj = {
+      caliber: req.body.caliber,
+      bulletBrand: req.body.bulletBrand,
+      bulletName: req.body.bulletName,
+      bulletGrains: req.body.bulletGrains,
+      powderBrand: req.body.powderBrand,
+      powderName: req.body.powderName,
+      powderGrains: req.body.powderGrains,
+      trim: req.body.trim
+    }
     db.Load
-      .create(req.body)
+      .create(tempObj)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },

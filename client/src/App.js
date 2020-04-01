@@ -2,7 +2,8 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import MainPage from "./pages/MainPage";
 import LoadDataPage from "./pages/LoadDataPage";
-import NewLoadsPage from "./pages/NewLoadsPage"
+import NewLoadsPage from "./pages/NewLoadsPage";
+
 
 function App() {
   return (

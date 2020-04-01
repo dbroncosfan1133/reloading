@@ -2,7 +2,6 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const loadSchema = new Schema({
-    date: { type: Date, default: Date.now },
     caliber: { type: String, required: true },
     bulletBrand: { type: String, required: true },
     bulletName: { type: String, required: true },
