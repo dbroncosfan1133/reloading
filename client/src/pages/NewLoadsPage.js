@@ -38,10 +38,23 @@ class NewLoadsPage extends React.Component {
           powderGrains: this.state.powderGrains,
           trim: this.state.trim
         })
-          // .then(res => this.viewInventory())
+          .then(res => this.clearForm())
           .catch(err => console.log(err));
       }
     };
+
+    clearForm = () => {
+      this.setState({
+        caliber: "",
+        bulletBrand: "",
+        bulletName: "",
+        bulletGrains: "",
+        powderBrand: "",
+        powderName: "",
+        powderGrains: "",
+        trim: ""
+      });
+    }
 
   render() {
     return (

@@ -16,5 +16,8 @@ export default {
   // Saves a new load to the database
   saveLoad: function(loadData) {
     return axios.post("/api/loads", loadData);
+  },
+  getData: function() {
+    return axios.get("/api/data");
   }
 };

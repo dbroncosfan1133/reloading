@@ -1,4 +1,5 @@
 module.exports = {
-    Load: require("./load")
+    Load: require("./load"),
+    LoadData: require("./loadData")
   };
   
