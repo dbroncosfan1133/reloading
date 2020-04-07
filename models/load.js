@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const loadSchema = new Schema({
     lotNumber: { type: Number, unique: true},
-    date: { type: Date, required: true },
+    date: { type: String, required: true },
     caliber: { type: String, required: true },
     bulletBrand: { type: String, required: true },
     bulletName: { type: String, required: true },

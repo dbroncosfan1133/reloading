@@ -28,7 +28,7 @@ class LoadDetails extends React.Component {
                   <table className="table is-bordered is-striped is-fullwidth">
                     <thead>
                       <tr>
-                        <th>Lot Number:</th>
+                        <th>Lot:</th>
                         <th>Date Loaded:</th>
                         <th>Caliber:</th>
                         <th>Bullet Brand:</th>
@@ -43,37 +43,59 @@ class LoadDetails extends React.Component {
                     </thead>
                     <tbody>
                       <td>
-                        {this.state.load.lotNumber}
+                        <div className="is-size-6">
+                          {this.state.load.lotNumber}
+                        </div>
                       </td>
                       <td>
-                        {this.state.load.date}
+                        <div className="is-size-6">
+                          {this.state.load.date}
+                        </div>
                       </td>
                       <td>
-                        {this.state.load.caliber}
+                        <div className="is-size-6">
+                          {this.state.load.caliber}
+                        </div>
                       </td>
                       <td>
-                        {this.state.load.bulletBrand}
+                        <div className="is-size-6">
+                          {this.state.load.bulletBrand}
+                        </div>
                       </td>
                       <td>
-                        {this.state.load.bulletName}
+                        <div className="is-size-6">
+                          {this.state.load.bulletName}
+                        </div>
                       </td>
                       <td>
-                        {this.state.load.bulletGrains}
+                        <div className="is-size-6">
+                          {this.state.load.bulletGrains}
+                        </div>
                       </td>
                       <td>
-                        {this.state.load.powderBrand}
+                        <div className="is-size-6">
+                          {this.state.load.powderBrand}
+                        </div>
                       </td>
                       <td>
-                        {this.state.load.powderName}
+                        <div className="is-size-6">
+                          {this.state.load.powderName}
+                        </div>
                       </td>
                       <td>
-                        {this.state.load.powderGrains}
+                        <div className="is-size-6">
+                          {this.state.load.powderGrains}
+                        </div>
                       </td>
                       <td>
-                        {this.state.load.trim}
+                        <div className="is-size-6">
+                          {this.state.load.trim}
+                        </div>
                       </td>
                       <td>
-                        {this.state.load.roundsLoaded}
+                        <div className="is-size-6">
+                          {this.state.load.roundsLoaded}
+                        </div>
                       </td>
                     </tbody>
                   </table>

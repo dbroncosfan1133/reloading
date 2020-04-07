@@ -42,3 +42,5 @@ class LoadingData extends React.Component {
   }
 
 }
+
+export default LoadingData;

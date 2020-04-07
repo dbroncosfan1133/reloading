@@ -1,9 +1,9 @@
 const router = require("express").Router();
-const loadsController = require("../../controllers/loadsController");
+const dataController = require("../../controllers/dataController");
 
 // Matches with "/api/data"
 router.route("/")
-  .get(loadsController.findAllData)
+  .get(dataController.findAllData)
 //   .post(loadsController.create);
 
 // Matches with "/api/data/:id"

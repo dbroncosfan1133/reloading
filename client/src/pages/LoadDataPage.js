@@ -2,7 +2,7 @@ import React from "react";
 import PageHero from "../components/PageHero/PageHero";
 import { Link } from "react-router-dom";
 import DeleteBtn from "../components/DeleteBtn/DeleteBtn";
-import SearchForm from "../components/SearchForm/SearchForm";
+// import SearchForm from "../components/SearchForm/SearchForm";
 import API from "../utils/API";
 import "./mainpage.css"
 
