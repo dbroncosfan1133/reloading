@@ -1,12 +1,14 @@
 import React from "react";
 import BackButton from "../components/BackBtn/BackBtn";
-import { Input, FormBtn } from "../components/Form/Form";
+import { Input, TextArea, FormBtn } from "../components/Form/Form";
 import MainHero from "../components/MainHero/MainHero";
 import API from "../utils/API";
 import "./mainpage.css"
 
 class NewLoadsPage extends React.Component {
   state = {
+    lotNumber: "",
+    date: "",
     caliber: "",
     bulletBrand: "",
     bulletName: "",
@@ -14,7 +16,9 @@ class NewLoadsPage extends React.Component {
     powderBrand: "",
     powderName: "",
     powderGrains: "",
-    trim: ""
+    trim: "",
+    roundsLoaded: "",
+    notes: ""
   };
 
   handleInputChange = event => {
@@ -26,9 +30,11 @@ class NewLoadsPage extends React.Component {
 
     handleFormSubmit = event => {
       event.preventDefault();
-      if (this.state.caliber && this.state.bulletBrand && this.state.bulletName && this.state.bulletGrains
-          && this.state.powderBrand && this.state.powderName && this.state.powderGrains && this.state.trim) {
+      if (this.state.lotNumber && this.state.date && this.state.caliber && this.state.bulletBrand && this.state.bulletName && this.state.bulletGrains
+          && this.state.powderBrand && this.state.powderName && this.state.powderGrains && this.state.trim && this.state.roundsLoaded && this.state.notes) {
         API.saveLoad({
+          lotNumber: this.state.lotNumber,
+          date: this.state.date,
           caliber: this.state.caliber,
           bulletBrand: this.state.bulletBrand,
           bulletName: this.state.bulletName,
@@ -36,7 +42,9 @@ class NewLoadsPage extends React.Component {
           powderBrand: this.state.powderBrand,
           powderName: this.state.powderName,
           powderGrains: this.state.powderGrains,
-          trim: this.state.trim
+          trim: this.state.trim,
+          roundsLoaded: this.state.roundsLoaded,
+          notes: this.state.notes
         })
           .then(res => this.clearForm())
           .catch(err => console.log(err));
@@ -45,6 +53,8 @@ class NewLoadsPage extends React.Component {
 
     clearForm = () => {
       this.setState({
+        lotNumber: "",
+        date: "",
         caliber: "",
         bulletBrand: "",
         bulletName: "",
@@ -52,7 +62,9 @@ class NewLoadsPage extends React.Component {
         powderBrand: "",
         powderName: "",
         powderGrains: "",
-        trim: ""
+        trim: "",
+        roundsLoaded: "",
+        notes: ""
       });
     }
 
@@ -66,6 +78,18 @@ class NewLoadsPage extends React.Component {
           <div className="columns">
             <div className="column is-9">
               <form>
+                <Input
+                  value={this.state.lotNumber}
+                  onChange={this.handleInputChange}
+                  name="lotNumber"
+                  placeholder="Create a new lot number.."
+                />
+                <Input
+                  value={this.state.date}
+                  onChange={this.handleInputChange}
+                  name="date"
+                  placeholder="Enter date loaded.. (YYYY-MM-DD)"
+                />
                 <Input
                   value={this.state.caliber}
                   onChange={this.handleInputChange}
@@ -112,15 +136,27 @@ class NewLoadsPage extends React.Component {
                   value={this.state.trim}
                   onChange={this.handleInputChange}
                   name="trim"
-                  placeholder="Trimmed? (Times Trimmed)"
+                  placeholder="Number of times trimmed? (Rolling Count)"
+                />
+                <Input
+                  value={this.state.roundsLoaded}
+                  onChange={this.handleInputChange}
+                  name="roundsLoaded"
+                  placeholder="Number of rounds loaded"
+                />
+                <TextArea
+                  value={this.state.notes}
+                  onChange={this.handleInputChange}
+                  name="notes"
+                  placeholder="Please enter a note.."
                 />
                 <div className="field is-grouped">
                     <p className="control">
                     <FormBtn
-                      disabled={!(this.state.caliber && this.state.bulletBrand
+                      disabled={!(this.state.lotNumber && this.state.date && this.state.caliber && this.state.bulletBrand
                         && this.state.bulletName && this.state.bulletGrains &&
                         this.state.powderBrand && this.state.powderName &&
-                        this.state.powderGrains && this.state.trim)}
+                        this.state.powderGrains && this.state.trim && this.state.roundsLoaded)}
                       onClick={this.handleFormSubmit}
                     >
                       Submit

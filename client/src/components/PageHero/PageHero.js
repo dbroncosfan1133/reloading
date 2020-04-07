@@ -3,7 +3,7 @@ import BackButton from "../BackBtn/BackBtn";
 
 function PageHero() {
     return (
-        <div className="hero is-dark is-bold">
+        <div className="hero is-dark is-bold no-print">
             <div className="hero-body">
                 <div className="navbar">
                     <div className="navbar-brand">

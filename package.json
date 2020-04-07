@@ -30,6 +30,7 @@
     "axios": "^0.18.0",
     "express": "^4.16.3",
     "if-env": "^1.0.4",
+    "moment": "^2.24.0",
     "mongoose": "^5.3.16",
     "react-modal": "^3.11.2",
     "react-table": "^7.0.0",

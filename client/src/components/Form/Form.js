@@ -12,6 +12,16 @@ export function Input(props) {
   );
 }
 
+export function TextArea(props) {
+  return (
+    <div className="field">
+      <div className="control">
+        <textarea className="textarea is-info" type="text" {...props} />
+      </div>
+    </div>
+  )
+}
+
 export function FormBtn(props) {
   return (
     <div className="buttons">

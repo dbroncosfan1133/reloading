@@ -17,6 +17,8 @@ module.exports = {
   },
   create: function(req, res) {
     const tempObj = {
+      lotNumber: req.body.lotNumber,
+      date: req.body.date,
       caliber: req.body.caliber,
       bulletBrand: req.body.bulletBrand,
       bulletName: req.body.bulletName,
@@ -24,7 +26,9 @@ module.exports = {
       powderBrand: req.body.powderBrand,
       powderName: req.body.powderName,
       powderGrains: req.body.powderGrains,
-      trim: req.body.trim
+      trim: req.body.trim,
+      roundsLoaded: req.body.roundsLoaded,
+      notes: req.body.notes
     }
     db.Load
       .create(tempObj)

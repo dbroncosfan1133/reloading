@@ -2,6 +2,7 @@ import React from "react";
 import PageHero from "../components/PageHero/PageHero";
 import { Link } from "react-router-dom";
 import DeleteBtn from "../components/DeleteBtn/DeleteBtn";
+import SearchForm from "../components/SearchForm/SearchForm";
 import API from "../utils/API";
 import "./mainpage.css"
 
@@ -33,13 +34,25 @@ class PastLoads extends React.Component {
       <div>
         <PageHero />
         <div className="container mainContain">
-          <h1 className="is-size-3">Load History</h1>
+          <div className="level">
+            <div className="level-left">
+              <div className="level-item">
+                <h1 className="is-size-3">Load History</h1>
+              </div>
+            </div>
+            <div className="level-right">
+              <div className="level-item">
+                {/* <SearchForm /> */}
+              </div>
+            </div>
+          </div>
           <hr />
           <div className="columns">
             <div className="column is-12">
               <table className="table is-bordered is-striped is-fullwidth">
                 <thead>
                   <tr>
+                    <th>Lot:</th>
                     <th>Caliber:</th>
                     <th>Bullet Brand:</th>
                     <th>Bullet Name:</th>
@@ -53,6 +66,7 @@ class PastLoads extends React.Component {
                 </thead>
                 <tfoot>
                   <tr>
+                    <th>Lot:</th>
                     <th>Caliber:</th>
                     <th>Bullet Brand:</th>
                     <th>Bullet Name:</th>
@@ -68,59 +82,64 @@ class PastLoads extends React.Component {
                   <td>
                     {this.state.loads.map(load => (
                       <Link to={"/loads/" + load._id}>
-                        <div className="is-size-4">
-                          {load.caliber}
+                        <div className="is-size-5">
+                          {load.lotNumber}
                         </div>
                       </Link>
                     ))}
                   </td>
                   <td>
                     {this.state.loads.map(load => (
-                      <Link to={"/loads/" + load._id}>
-                        <div className="is-size-4">
-                          {load.bulletBrand}
-                        </div>
-                      </Link>
+                      <div className="is-size-5">
+                        {load.caliber}
+                      </div>
                     ))}
                   </td>
                   <td>
                     {this.state.loads.map(load => (
-                      <div className="is-size-4">
+                      <div className="is-size-5">
+                        {load.bulletBrand}
+                      </div>
+                    ))}
+                  </td>
+                  <td>
+                    {this.state.loads.map(load => (
+                      <div className="is-size-5">
                         {load.bulletName}
                       </div>
                     ))}
                   </td>
                   <td>
                     {this.state.loads.map(load => (
-                      <div className="is-size-4">
+                      <div className="is-size-5">
                         {load.bulletGrains}
                       </div>
                     ))}
                   </td>
                   <td>
                     {this.state.loads.map(load => (
-                      <div className="is-size-4">
+                      <div className="is-size-5">
                         {load.powderBrand}
                       </div>
                     ))}
                   </td>
                   <td>
                     {this.state.loads.map(load => (
-                      <div className="is-size-4">
+                      <div className="is-size-5">
                         {load.powderName}
                       </div>
                     ))}
                   </td>
                   <td>
                     {this.state.loads.map(load => (
-                      <div className="is-size-4">
+                      <div className="is-size-5">
                         {load.powderGrains}
                       </div>
                     ))}
                   </td>
                   <td>
                     {this.state.loads.map(load => (
-                      <div className="is-size-4">
+                      <div className="is-size-5">
                         {load.trim}
                       </div>
                     ))}

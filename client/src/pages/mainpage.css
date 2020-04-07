@@ -1,3 +1,19 @@
 .mainContain {
     margin-top: 25px;
   }
+
+.searchBar {
+  text-align: right;
+}
+
+.notesCard {
+  margin: 0 10px 0 10px;
+}
+
+@media print
+{
+  .no-print, .no-print *
+  {
+    display: none !important;
+  }
+}
