@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import PageHero from "../components/PageHero/PageHero";
+import LoadDetailBkBtn from "../components/LoadDetailBkBtn/LoadDetailBkBtn";
 import API from "../utils/API";
 
 class LoadDetails extends React.Component {
@@ -19,7 +20,19 @@ class LoadDetails extends React.Component {
       <div>
         <PageHero />
         <div className="container mainContain">
-          <h1 className="is-size-3">Load Details</h1>
+          <div className="level">
+            <div className="level-left">
+              <div className="level-item">
+              <h1 className="is-size-3">Load Details</h1>
+              </div>
+            </div>
+            <div className="level-right">
+              <div className="level-item">
+                <LoadDetailBkBtn />
+              </div>
+            </div>
+          </div>
+
           <hr />
           <div className="columns">
             <div className="column is-12">

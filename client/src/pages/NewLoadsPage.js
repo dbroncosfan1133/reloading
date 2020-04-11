@@ -1,7 +1,7 @@
 import React from "react";
-import BackButton from "../components/BackBtn/BackBtn";
+import ClearFormBtn from "../components/ClearFormBtn/ClearFormBtn";
 import { Input, TextArea, FormBtn } from "../components/Form/Form";
-import MainHero from "../components/MainHero/MainHero";
+import PageHero from "../components/PageHero/PageHero";
 import API from "../utils/API";
 import "./mainpage.css"
 
@@ -71,7 +71,7 @@ class NewLoadsPage extends React.Component {
   render() {
     return (
       <div>
-        <MainHero />
+        <PageHero />
         <div className="container mainContain">
           <h1 className="is-size-3">Enter New Load Data:</h1>
           <hr />
@@ -163,7 +163,7 @@ class NewLoadsPage extends React.Component {
                       </FormBtn>
                     </p>
                     <p className="control">
-                      <BackButton />
+                      <ClearFormBtn />
                     </p>
                   </div>
               </form>

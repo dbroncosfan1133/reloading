@@ -1,5 +1,5 @@
 import React from "react";
-import BackButton from "../BackBtn/BackBtn";
+import MainPgButton from "../MainPgBtn/MainPgBtn";
 
 function PageHero() {
     return (
@@ -20,7 +20,7 @@ function PageHero() {
                     </div>
                     <div className="navbar-end">
                         <div className="navbar-item">
-                            <BackButton />
+                            <MainPgButton />
                         </div>
                     </div>
                 </div>
