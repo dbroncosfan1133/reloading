@@ -37,6 +37,7 @@
     "passport-local-mongoose": "^6.0.1",
     "react-modal": "^3.11.2",
     "react-table": "^7.0.0",
+    "reactable": "^1.1.0",
     "styled-components": "^5.0.1"
   }
 }
