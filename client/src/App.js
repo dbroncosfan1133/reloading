@@ -6,7 +6,7 @@ import LoadDataPage from "./pages/LoadDataPage";
 import NewLoadsPage from "./pages/NewLoadsPage";
 import LoadDetails from "./pages/LoadDetails";
 import Lyman from "./pages/Lyman";
-import TestFunc from "./pages/testpage";
+
 
 function App() {
   return (
@@ -19,7 +19,6 @@ function App() {
           <Route exact path="/newload" component={NewLoadsPage} />
           <Route exact path="/loads/:id" component={LoadDetails} />
           <Route exact path="/data" component={Lyman} />
-          <Route exact path="/test" component={TestFunc} />
         </Switch>
       </div>
     </Router>

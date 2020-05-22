@@ -1,7 +1,6 @@
 import React from "react";
-import LogoutBtn from "../LogoutBtn/LogoutBtn";
 
-function MainHero() {
+function LoginHero() {
     return (
         <div className="hero is-dark is-bold">
             <div className="hero-body">
@@ -18,15 +17,10 @@ function MainHero() {
                             </div>
                         </div>
                     </div>
-                    <div className="navbar-end">
-                        <div className="navbar-item">
-                            <LogoutBtn />
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
     );
 }
 
-export default MainHero;
+export default LoginHero;
